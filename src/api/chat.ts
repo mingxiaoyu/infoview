@@ -42,14 +42,6 @@ export const getfilelist = (knowledge_base_id: any) => {
 
   })
 }
-export const bing_search = (params: any) => {
-  return api({
-    url: '/local_doc_qa/bing_search_chat',
-    method: 'post',
-    data: JSON.stringify(params),
-
-  })
-}
 export const deletefile = (params: any) => {
   return api({
     url: '/local_doc_qa/delete_file',

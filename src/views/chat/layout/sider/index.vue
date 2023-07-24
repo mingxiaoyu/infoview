@@ -3,7 +3,6 @@ import type { CSSProperties } from 'vue'
 import { computed, ref, watch } from 'vue'
 import { NButton, NLayoutSider, NRadioButton, NRadioGroup } from 'naive-ui'
 import List from './List.vue'
-import Knowledge from './knowledge-base/index.vue'
 import Footer from './Footer.vue'
 import { useAppStore, useChatStore } from '@/store'
 import { useBasicLayout } from '@/hooks/useBasicLayout'
@@ -57,10 +56,6 @@ const songs = [
     label: '模型',
   },
   {
-    value: 3,
-    label: '知识库',
-  },
-  {
     value: 4,
     label: '提示词',
   },
@@ -104,12 +99,6 @@ watch(
           </NRadioGroup>
         </div>
 
-        <!-- 知识库界面 -->
-        <div v-if="menu === 3">
-          <div class="p-4">
-            <Knowledge />
-          </div>
-        </div>
         <!-- 会话界面 -->
         <div v-if="menu === 1">
           <div class="p-4">

@@ -439,11 +439,6 @@ const options = computed(() => {
       icon: iconRender({ icon: 'ri-chat-1-line' }),
     },
     {
-      label: '知识库',
-      key: '知识库',
-      icon: iconRender({ icon: 'ri-store-2-line' }),
-    },
-    {
       type: 'divider',
       key: 'd1',
     },
@@ -488,11 +483,7 @@ onUnmounted(() => {
     controller.abort()
 })
 function searchfun() {
-  if (search.value === '知识库')
-    active.value = true
-
-  else
-    active.value = false
+  active.value = false
 }
 </script>
 
@@ -548,7 +539,6 @@ function searchfun() {
         <div class="flex items-center justify-between space-x-2">
           <NRadioGroup v-if="!isMobile" v-model:value="search" @change="searchfun">
             <NRadioButton value="对话" label="对话" />
-            <NRadioButton value="知识库" label="知识库" />
           </NRadioGroup>
           <HoverButton v-if="!isMobile" @click="handleClear">
             <span class="text-xl text-[#4f555e] dark:text-white">
