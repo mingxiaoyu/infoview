@@ -51,14 +51,6 @@ const songs = [
     value: 1,
     label: '会话',
   },
-  {
-    value: 2,
-    label: '模型',
-  },
-  {
-    value: 4,
-    label: '提示词',
-  },
 ]
 //
 watch(

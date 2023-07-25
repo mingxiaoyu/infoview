@@ -124,7 +124,7 @@ async function onConversation() {
           history: history.value,
         })
         : await chat({
-          question: message,
+          prompt: message,
           history: history.value,
         })
       const result = active.value ? `${res.data.response}\n\n数据来源：\n\n>${res.data.source_documents.join('>')}` : res.data.response
@@ -239,7 +239,7 @@ async function onRegenerate(index: number) {
           history: history.value,
         })
         : await chat({
-          question: message,
+          prompt: message,
           history: history.value,
         })
       const result = active.value ? res.data.response.text : res.data.response
@@ -558,11 +558,6 @@ function searchfun() {
           <HoverButton v-if="!isMobile" @click="handleExport">
             <span class="text-xl text-[#4f555e] dark:text-white">
               <SvgIcon icon="ri:download-2-line" />
-            </span>
-          </HoverButton>
-          <HoverButton v-if="!isMobile" @click="toggleUsingContext">
-            <span class="text-xl" :class="{ 'text-[#4b9e5f]': usingContext, 'text-[#a8071a]': !usingContext }">
-              <SvgIcon icon="ri:chat-history-line" />
             </span>
           </HoverButton>
           <NAutoComplete v-model:value="prompt" :options="searchOptions" :render-label="renderOption">
